@@ -3,6 +3,7 @@ package ru.yandex.practicum.collector.mapper;
 import com.google.protobuf.Timestamp;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.apache.avro.specific.SpecificRecordBase;
 import ru.yandex.practicum.grpc.telemetry.event.SensorEventProto;
 import ru.yandex.practicum.kafka.telemetry.event.*;
 
@@ -22,7 +23,7 @@ public final class SensorEventMapper {
         return b.build();
     }
 
-    private static Object getPayload(SensorEventProto event) {
+    private static SpecificRecordBase getPayload(SensorEventProto event) {
         SensorEventProto.PayloadCase payloadCase = event.getPayloadCase();
 
         switch (payloadCase) {
