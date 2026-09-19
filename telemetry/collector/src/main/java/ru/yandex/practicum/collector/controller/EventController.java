@@ -9,7 +9,7 @@ import net.devh.boot.grpc.server.service.GrpcService;
 import ru.yandex.practicum.collector.kafka.KafkaEventService;
 import ru.yandex.practicum.grpc.telemetry.event.HubEventProto;
 import ru.yandex.practicum.grpc.telemetry.event.SensorEventProto;
-import telemetry.service.controller.CollectorControllerGrpc;
+import telemetry.service.collector.CollectorControllerGrpc;
 
 /**
  * API для передачи событий от датчиков и хабов в топик Kafka
