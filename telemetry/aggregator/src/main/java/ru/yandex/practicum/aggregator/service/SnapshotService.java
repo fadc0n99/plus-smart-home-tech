@@ -31,7 +31,7 @@ public class SnapshotService {
 
         SensorStateAvro oldState = snapshot.getSensorsState().get(sensorId);
         if (oldState != null) {
-            if (!oldState.getTimestamp().isBefore(event.getTimestamp())) {
+            if (oldState.getTimestamp().isAfter(event.getTimestamp())) {
                 log.debug("Event is older than current state of sensor {}, skipping", sensorId);
                 return Optional.empty();
             }
