@@ -27,16 +27,16 @@ public final class SensorEventMapper {
         SensorEventProto.PayloadCase payloadCase = event.getPayloadCase();
 
         switch (payloadCase) {
-            case TEMPERATURE_SENSOR_EVENT -> {
-                var temperatureEvent = event.getTemperatureSensorEvent();
+            case TEMPERATURE_SENSOR -> {
+                var temperatureEvent = event.getTemperatureSensor();
 
                 return TemperatureSensorAvro.newBuilder()
                         .setTemperatureC(temperatureEvent.getTemperatureC())
                         .setTemperatureF(temperatureEvent.getTemperatureF())
                         .build();
             }
-            case CLIMATE_SENSOR_EVENT -> {
-                var climateEvent = event.getClimateSensorEvent();
+            case CLIMATE_SENSOR -> {
+                var climateEvent = event.getClimateSensor();
 
                 return ClimateSensorAvro.newBuilder()
                         .setCo2Level(climateEvent.getCo2Level())
@@ -44,16 +44,16 @@ public final class SensorEventMapper {
                         .setTemperatureC(climateEvent.getTemperatureC())
                         .build();
             }
-            case LIGHT_SENSOR_EVENT -> {
-                var lightEvent = event.getLightSensorEvent();
+            case LIGHT_SENSOR -> {
+                var lightEvent = event.getLightSensor();
 
                 return LightSensorAvro.newBuilder()
                         .setLinkQuality(lightEvent.getLinkQuality())
                         .setLuminosity(lightEvent.getLuminosity())
                         .build();
             }
-            case MOTION_SENSOR_EVENT -> {
-                var motionEvent = event.getMotionSensorEvent();
+            case MOTION_SENSOR -> {
+                var motionEvent = event.getMotionSensor();
 
                 return MotionSensorAvro.newBuilder()
                         .setLinkQuality(motionEvent.getLinkQuality())
@@ -61,8 +61,8 @@ public final class SensorEventMapper {
                         .setVoltage(motionEvent.getVoltage())
                         .build();
             }
-            case SWITCH_SENSOR_EVENT -> {
-                var switchEvent = event.getSwitchSensorEvent();
+            case SWITCH_SENSOR -> {
+                var switchEvent = event.getSwitchSensor();
 
                 return SwitchSensorAvro.newBuilder()
                         .setState(switchEvent.getState())

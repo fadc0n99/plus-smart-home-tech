@@ -58,11 +58,9 @@ message ScenarioConditionProto {
     ConditionTypeProto type = 2;
     ConditionOperationProto operation = 3;
 
-    // Аналог union { null, int, boolean } — одно из трёх
     oneof value {
-        int32 int_value = 4;
-        bool  bool_value = 5;
-        // null = ни одно поле не установлено
+        bool  bool_value = 4;
+        int32 int_value = 5;
     }
 }
 
@@ -70,7 +68,7 @@ message ScenarioConditionProto {
 message DeviceActionProto {
     string sensor_id = 1;
     ActionTypeProto type = 2;
-    optional int32 value = 3;   // null, если не задано
+    optional int32 value = 3;
 }
 
 // ===== Сценарий добавлен =====
