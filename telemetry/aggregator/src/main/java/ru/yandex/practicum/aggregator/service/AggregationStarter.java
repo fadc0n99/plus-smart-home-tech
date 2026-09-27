@@ -65,7 +65,6 @@ public class AggregationStarter {
                 }
 
                 if (!records.isEmpty()) {
-                    producer.flush();
                     Map<TopicPartition, OffsetAndMetadata> offsets = new HashMap<>();
                     for (ConsumerRecord<String, SensorEventAvro> consumerRecord : records) {
                         offsets.put(

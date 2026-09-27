@@ -21,10 +21,12 @@ public class Scenario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "hub_id")
     private String hubId;
 
+    @Column(name = "name")
     private String name;
 }
