@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ru.yandex.practicum.collector.mapper.HubEventMapper;
 import ru.yandex.practicum.collector.mapper.SensorEventMapper;
-import ru.yandex.practicum.collector.dto.hub.HubEvent;
-import ru.yandex.practicum.collector.dto.sensor.SensorEvent;
+import ru.yandex.practicum.grpc.telemetry.event.HubEventProto;
+import ru.yandex.practicum.grpc.telemetry.event.SensorEventProto;
 
 @Service
 public class KafkaEventService {
@@ -26,10 +26,10 @@ public class KafkaEventService {
         this.sensorsTopic = sensorsTopic;
     }
 
-    public void send(SensorEvent e) {
-        producer.send(new ProducerRecord<>(sensorsTopic, e.getHubId(), SensorEventMapper.toAvro(e)));
+    public void send(SensorEventProto sensorEvent) {
+        producer.send(new ProducerRecord<>(sensorsTopic, sensorEvent.getHubId(), SensorEventMapper.toAvro(sensorEvent)));
     }
-    public void send(HubEvent e) {
-        producer.send(new ProducerRecord<>(hubsTopic, e.getHubId(), HubEventMapper.toAvro(e)));
+    public void send(HubEventProto hubEvent) {
+        producer.send(new ProducerRecord<>(hubsTopic, hubEvent.getHubId(), HubEventMapper.toAvro(hubEvent)));
     }
 }
