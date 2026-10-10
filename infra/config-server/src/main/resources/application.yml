@@ -10,7 +10,6 @@ spring:
     config:
       server:
         native:
-          # Пути считаются от рабочей директории запуска (корень проекта)
           search-locations:
             - file:./infra/config-repo
             - file:./infra/config-repo/telemetry

@@ -1,4 +1,3 @@
-# Общие настройки для всех сервисов Smart Home Tech
 spring:
   kafka:
     bootstrap-servers: localhost:9092
