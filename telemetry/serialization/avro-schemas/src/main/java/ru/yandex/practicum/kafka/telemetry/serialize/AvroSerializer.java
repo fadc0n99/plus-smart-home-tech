@@ -1,4 +1,4 @@
-package ru.yandex.practicum.collector.kafka;
+package ru.yandex.practicum.kafka.telemetry.serialize;
 
 import org.apache.avro.io.BinaryEncoder;
 import org.apache.avro.io.EncoderFactory;
@@ -7,8 +7,8 @@ import org.apache.avro.specific.SpecificRecord;
 import org.apache.avro.specific.SpecificRecordBase;
 import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Serializer;
-import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class AvroSerializer implements Serializer<SpecificRecordBase> {
