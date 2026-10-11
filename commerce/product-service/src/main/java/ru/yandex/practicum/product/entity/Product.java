@@ -42,10 +42,6 @@ public class Product {
     @Column(name = "image_url", length = 2048)
     private String imageUrl;
 
-    /**
-     * Товары не удаляются физически: снятый с продажи товар помечается как неактивный,
-     * чтобы сохранить историю для заказов и аналитики.
-     */
     @Column(name = "active", nullable = false)
     private boolean active = true;
 }

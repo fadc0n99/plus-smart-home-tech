@@ -12,10 +12,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import ru.yandex.practicum.inventory.exception.InsufficientStockException;
 
-/**
- * Складская запись по одному товару. productId — внешний идентификатор из product-service,
- * таблицы каталога inventory-service не читает.
- */
 @Entity
 @Table(name = "inventory")
 @Getter
@@ -35,10 +31,6 @@ public class InventoryItem {
     @Column(name = "reserved_quantity", nullable = false)
     private int reservedQuantity;
 
-    /**
-     * Оптимистичная блокировка: защищает от потери параллельных изменений остатков.
-     * Значением управляет JPA.
-     */
     @Version
     @Column(name = "version", nullable = false)
     private Long version;

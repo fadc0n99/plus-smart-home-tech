@@ -26,10 +26,6 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderMapper mapper;
 
-    /**
-     * Заказ создаётся по данным из запроса: название и цена товара сохраняются как снимок,
-     * каталог на этом этапе не опрашивается. Итоговая стоимость считается здесь же.
-     */
     @Transactional
     public OrderDto create(CreateOrderRequest request) {
         Order order = new Order();

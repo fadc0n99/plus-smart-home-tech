@@ -15,10 +15,6 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-/**
- * Позиция заказа хранит снимок товарных данных на момент оформления:
- * последующие изменения названия или цены в каталоге на заказ не влияют.
- */
 @Entity
 @Table(name = "order_items")
 @Getter

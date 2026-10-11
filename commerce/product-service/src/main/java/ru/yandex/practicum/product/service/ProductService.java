@@ -60,9 +60,6 @@ public class ProductService {
         return mapper.toDto(saved);
     }
 
-    /**
-     * Частичное обновление: поля, равные null, не меняются.
-     */
     @Transactional
     public ProductDto update(Long id, UpdateProductRequest request) {
         Product product = getProduct(id);
