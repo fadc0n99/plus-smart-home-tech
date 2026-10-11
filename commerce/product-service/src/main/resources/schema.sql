@@ -14,4 +14,4 @@ CREATE TABLE IF NOT EXISTS products (
     active      BOOLEAN        NOT NULL DEFAULT TRUE
 );
 
-CREATE INDEX IF NOT EXISTS idx_products_category_id ON products (category_id);
+CREATE INDEX IF NOT EXISTS idx_products_category_active_id ON products (category_id, active, id);

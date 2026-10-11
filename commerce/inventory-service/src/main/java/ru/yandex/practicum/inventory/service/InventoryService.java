@@ -48,7 +48,6 @@ public class InventoryService {
     public InventoryDto updateQuantity(UpdateInventoryRequest request) {
         InventoryItem item = getItem(request.productId());
         item.changeQuantity(request.quantity());
-        inventoryRepository.flush();
         log.info("Обновлено количество productId={}: quantity={}", item.getProductId(), item.getQuantity());
         return toDto(item);
     }
@@ -57,7 +56,6 @@ public class InventoryService {
     public ReserveResponse reserve(ReserveRequest request) {
         InventoryItem item = getItem(request.productId());
         item.reserve(request.quantity());
-        inventoryRepository.flush();
         log.info("Зарезервировано {} шт. товара productId={}, доступно {}",
                 request.quantity(), item.getProductId(), item.getAvailableQuantity());
         return new ReserveResponse(true, item.getAvailableQuantity(), "Товар успешно зарезервирован");
