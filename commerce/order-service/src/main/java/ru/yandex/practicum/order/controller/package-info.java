@@ -1,4 +1,4 @@
 /**
- * TODO: реализуйте REST-контроллер для заказов.
+ * REST-контроллер заказов.
  */
 package ru.yandex.practicum.order.controller;

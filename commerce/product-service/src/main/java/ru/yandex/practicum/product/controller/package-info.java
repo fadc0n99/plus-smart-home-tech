@@ -1,4 +1,4 @@
 /**
- * TODO: реализуйте REST-контроллеры для категорий и товаров.
+ * REST-контроллеры категорий и товаров.
  */
 package ru.yandex.practicum.product.controller;

@@ -1,4 +1,4 @@
 /**
- * TODO: реализуйте Spring Data репозиторий для складских записей.
+ * Spring Data репозиторий складских записей.
  */
 package ru.yandex.practicum.inventory.repository;

@@ -1,4 +1,4 @@
 /**
- * TODO: реализуйте JPA-сущности заказа и позиций заказа.
+ * JPA-сущности заказа и позиции заказа.
  */
 package ru.yandex.practicum.order.entity;

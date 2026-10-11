@@ -1,4 +1,4 @@
 /**
- * TODO: реализуйте Spring Data репозитории для сущностей каталога.
+ * Spring Data репозитории каталога.
  */
 package ru.yandex.practicum.product.repository;
